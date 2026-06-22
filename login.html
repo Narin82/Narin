@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Simple Styled Login Page</title>
+  <style>
+    body{
+      margin:0;
+      padding:0;
+      height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:#006bf8;
+      font-family: Arial, sans-serif;
+    }
+    .card{
+      width:350px;
+      background:white;
+      padding:28px;
+      border-radius:12px;
+      box-shadow:0 6px 20px rgba(0,0,0,0.12);
+    }
+    h2{
+      margin:0 0 18px;
+      text-align:center;
+      color:#334155;
+    }
+    label{
+      display:block;
+      margin-top:12px;
+      margin-bottom:4px;
+      color:#475569;
+      font-size:14px;
+    }
+    input{
+      width:93%;
+      padding:10px;
+      border:1px solid #cbd5e1;
+      border-radius:8px;
+      font-size:14px;
+    }
+    button{
+      width:100%;
+      padding:12px;
+      margin-top:18px;
+      border:none;
+      border-radius:8px;
+      background:#3b82f6;
+      color:white;
+      font-size:15px;
+      cursor:pointer;
+      font-weight:600;
+    }
+    button:hover{
+      background:#2563eb;
+    }   
+    .link{
+      margin-top:12px;
+      text-align:center;
+      font-size:13px;
+    }
+    .link a{
+      color:#3b82f6;
+      text-decoration:none;
+    }
+  </style>
+</head>
+<body>
+  <form id="loginForm">
+     <div class="card">
+    <h2>Login</h2>
+    <label for="user">Email</label>
+    <input type="text" id="username" placeholder="Enter your email" required><br>
+
+    <label for="pass">Password</label>
+    <input type="password" id="password" placeholder="Password" required><br>
+
+    <button type="submit">Login</button>
+  </div>
+  </form>
+</body>
+<script>
+  document.getElementById("loginForm").addEventListener("submit", function(event){
+    event.preventDefault(); // Stop automatic form submit
+
+    let user = document.getElementById("username").value;
+    let pass = document.getElementById("password").value;
+
+    if(user !== "" && pass !== "") {
+      // Go to new page
+      window.location.href = "sport.html"; 
+    } else {
+      alert("Please fill all fields!");
+    }
+  });
+</script>
+</html>
